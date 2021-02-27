@@ -1,0 +1,20 @@
+<br/>
+<div>
+	<ng-template *ngIf="tampil then boardTrue">
+	</ng-template>
+	<br/>
+	<span>player turn: {{player}}</span>
+	<br/>
+	<!-- <span>row: {{row*1}} / col: {{col*1}}</span> -->
+	<br/>
+	<input type="text" #text1 /> / <input type="text" #text2 />
+	<button (click)="move(text1.value, text2.value)">check</button>
+</div>
+
+<ng-template #boardTrue>
+	<div *ngFor="let data of [0,1,2,3,4]">
+		<span *ngFor="let data2 of board[data]">
+                {{data2}}
+            </span>
+	</div>
+</ng-template>
